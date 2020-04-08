@@ -1,0 +1,38 @@
+threadOS ver 1.0:
+threadOS: DISK created
+Type ? for help
+threadOS: a new thread (thread=Thread[Thread-3,2,main] tid=0 pid=-1)
+-->l Shell
+l Shell
+threadOS: a new thread (thread=Thread[Thread-5,2,main] tid=1 pid=0)
+shell[1]% Test5
+Test5
+threadOS: a new thread (thread=Thread[Thread-7,2,main] tid=2 pid=1)
+1: format( 48 )...................successfully completed
+Correct behavior of format......................2
+2: fd = open( "css430", "w+" )....successfully completed
+Correct behavior of open........................2
+3: size = write( fd, buf[16] )....successfully completed
+Correct behavior of writing a few bytes.........2
+4: close( fd )....................successfully completed
+Correct behavior of close.......................2
+5: reopen and read from "css430"..buf[1] = 0 (wrong)
+6: append buf[32] to "css430".....buf[1] = 0 (wrong)
+7: seek and read from "css430"....seek(fd,10,0) contents 0(wrong
+8: open "css430" with w+..........tmpBuf[1]=0 (wrong)
+9: fd = open( "bothell", "w" )....successfully completed
+10: size = write( fd, buf[6656] ).size = -1 (wrong)
+11: close( fd )....................successfully completed
+12: reopen and read from "bothell"size = 5632 (wrong)
+13: append buf[32] to "bothell"...size = 5664 (wrong)
+14: seek and read from "bothell"...seek(fd,512*11,0) contents 16(wrong)
+15: open "bothell" with w+.........tmpBuf[0]=24 (wrong)
+16: delete("css430")..............successfully completed
+Correct behavior of delete....................0.5
+17: create uwb0-29 of 512*13......fd[3] failed in writing
+18: uwb0 read b/w Test5 & Test6...
+threadOS: a new thread (thread=Thread[Thread-9,2,main] tid=3 pid=2)
+Test6.java: fd = -1Test6.java: size = -1(wrong)fail
+Test6.java terminated
+tmpBuf[0]=0 should be 100
+Test completed
